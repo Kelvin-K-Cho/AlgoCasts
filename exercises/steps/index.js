@@ -17,6 +17,22 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
+function steps(n) {
+	let count = 0;
+	let string = '';
+
+	for (let i = 0; i < n; i++) {
+		string += ' ';
+	}
+
+	while (count < n) {
+		let array = string.split('');
+		array.pop(' ');
+		array.unshift('#');
+		string = array.join('');
+		console.log(string);
+		count++;
+	}
+}
 
 module.exports = steps;
