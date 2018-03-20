@@ -14,6 +14,30 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {}
+function pyramid(n) {
+	let obj = {};
+	let str = '';
+	let times = 2 * n - 1;
+
+	for (let i = 0; i < times; i++) {
+		str += '#';
+	}
+
+	for (let j = 0; j < n; j++) {
+		obj[n - j] = str;
+		str = str.slice(j + 1, str.length - j - 1);
+
+		for (let k = n - j - 1; k < n; k++) {
+			str = str + ' ';
+			str = ' ' + str;
+		}
+	}
+
+	for (let num in obj) {
+		if (obj[num]) {
+			console.log(obj[num]);
+		}
+	}
+}
 
 module.exports = pyramid;
